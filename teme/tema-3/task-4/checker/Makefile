@@ -1,8 +1,8 @@
 CC = gcc
-CFLAGS = -m32
+CFLAGS = -m32 -no-pie
 ASM = nasm
 ASMFLAGS = -f elf
-TASKNAME = bonus_cpuid
+TASKNAME = task4
 IMPL = ../../$(TASKNAME)/$(TASKNAME).asm
 SKEL = ../$(TASKNAME).asm
 
@@ -11,10 +11,10 @@ build: checker
 check: 
 	./check.sh
 
-checker: checker.o bonus_cpuid.o
+checker: checker.o task4.o
 	$(CC) $(CFLAGS) $^ -o $@
  
-bonus_cpuid.o: bonus_cpuid.asm
+task4.o: task4.asm
 	$(ASM) $(ASMFLAGS) $^
 
 checker.o: checker.c
@@ -24,4 +24,4 @@ copy:
 	if [ -f $(IMPL) ]; then cp $(IMPL) .; else cp $(SKEL) .; fi
 
 clean:
-	rm checker *.o
+	rm checker *.o *.out

@@ -12,11 +12,13 @@ cpu_manufact_id:
 	leave
 	ret
 
-;; void features(char *vmx, char *rdrand, char *avx)
+;; void features(int *apic, int *rdrand, int *sgx, int *svm)
 ;
-;  checks whether vmx, rdrand and avx are supported by the cpu
-;  if a feature is supported, 1 is written in the corresponding variable
-;  0 is written otherwise
+;  checks whether apic, rdrand and mpx / svm are supported by the CPU
+;  MPX should be checked only for Intel CPUs; otherwise, the mpx variable
+;  should have the value -1
+;  SVM should be checked only for AMD CPUs; otherwise, the svm variable
+;  should have the value -1
 features:
 	enter 	0, 0
 	
