@@ -22,7 +22,7 @@ checker.o: checker.c
 	$(CC) -c $(CFLAGS) $^
 
 copy: 
-	if [ -f ../../task2_p1.asm ] && [ -f ../../task2_p2.asm ]; then cp ../../task2_p1.asm ../../task2_p2.asm .; else cp ../task2_p1.asm ../task2_p2.asm .; fi
+	if [ -f ../../task2/task2_p1.asm ] && [ -f ../../task2/task2_p2.asm ]; then cp ../../task2/task2_p1.asm ../../task2/task2_p2.asm .; else cp ../task2_p1.asm ../task2_p2.asm .; fi
 
 clean:
 	rm checker *.o

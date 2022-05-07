@@ -1,6 +1,8 @@
 ASM = nasm
 ASMFLAGS = -f elf64
-SOURCE = bonus_vectorial.asm
+TASKNAME = bonus_vectorial
+IMPL = ../../$(TASKNAME)/$(TASKNAME).asm
+SKEL = ../$(TASKNAME).asm
 
 build: checker
 
@@ -15,7 +17,7 @@ bonus_vectorial.o: $(SOURCE)
 checker.o: checker.c
 
 copy:
-	if [ -f ../../$(SOURCE) ]; then cp ../../$(SOURCE) .; else cp ../$(SOURCE) .; fi
+	if [ -f $(IMPL) ]; then cp $(IMPL) .; else cp $(SKEL) .; fi
 
 clean:
 	rm checker *.o

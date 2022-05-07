@@ -8,7 +8,7 @@ fail() {
 shopt -s extglob
 rm -f !("tests"|"check.sh"|"Makefile"|"checker.c")
 if [ -f ../../task1.asm ]; then
-	cp -r ../../task1.asm .
+	cp -r ../../task1/task1.asm .
 else
 	cp -r ../task1.asm .
 fi

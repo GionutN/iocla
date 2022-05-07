@@ -3,6 +3,9 @@ ASMFLAGS=--32
 CC=gcc
 CFLAGS=-m32 -fno-pie
 MAKEFLAGS=--silent
+TASKNAME = bonus_at_t
+IMPL = ../../$(TASKNAME)/$(TASKNAME).asm
+SKEL = ../$(TASKNAME).asm
 
 build: checker
 
@@ -19,7 +22,7 @@ checker.o: checker.c
 	$(CC) -c $(CFLAGS) $^
 
 copy:
-	if [ -f ../../bonus_at_t.S ]; then cp ../../bonus_at_t.S .; else cp ../bonus_at_t.S .; fi
+	if [ -f $(IMPL) ]; then cp $(IMPL) .; else cp $(SKEL) .; fi
 
 clean:
 	rm checker *.o
