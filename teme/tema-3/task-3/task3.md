@@ -1,10 +1,35 @@
-# Task 3
+# Task 3 Sortare de cuvinte 25p
 
-Dupa a 3-a usa, Biju e intampinat de John von Neumann, inventatorul Merge Sort, printre altele. John ii spune lui Biju ca are probleme in a intelege versurile lui Salam, si ii cere sa scrie 2 functii care sa-l ajute in descifrarea lor.
+Luna a mers împreună cu Sursee până în Rectorat dar acum trebuie sa ajungă îm Regie. Luna are de completat un rebus folosind cuvintele unui text și vă roagă să o ajutați prin a sorta cuvintele în funcție de lungime ca să îi fie mai ușor.
 
-Pentru acest task veti avea de separat un text in cuvinte dupa niste delimitatori si, dupa aceea, sa sortati aceste cuvinte folosind functia qsort. Sortarea se va face intai dupa lungimea cuvintelor si in cazul egalitatii se va sorta lexicografic.
+Pentru acest task veți avea de separat un text în cuvinte după niște delimitatori și, după aceea, să sortați aceste cuvinte folosind functia qsort. Sortarea se va face întâi după lungimea cuvintelor și în cazul egalității se va sorta lexicografic.
 
-Va trebui sa implementati 2 functii cu semnaturile `void get_words(char *s, char **words, int number_of_words);` si `void sort(char **words, int number_of_words, int size);` din fisierul `task3.asm`. Functia get_words primeste ca parametri textul, un vector de stringuri in care va trebui sa salvati cuvintele pe care ulterior le veti sorta si numarul de cuvinte. Functia sort va primi vectorul de cuvinte, numarul de cuvinte si dimensiunea unui cuvant.
+Va trebui să implementați 2 functii cu semnaturile `void get_words(char *s, char **words, int number_of_words);` si `void sort(char **words, int number_of_words, int size);` din fisierul `task3.asm`. 
+
+
+Antetul primei funcții este:
+```
+void get_words(char *s, char **words, int number_of_words); 
+```
+
+Semnificația argumentelor este:
+  * **s** textul din care extragem cuvintele
+  * **words** vectorul de string-uri în care se salvează cuvintele găsite
+  * **number_of_words** numărul de cuvinte
+
+Atenție, funcția *nu* returnează nimic, cuvintele se salveaza in vectorul words!
+
+Antetul celei de-a doua funcții este:
+```
+void sort(char **words, int number_of_words, int size);
+```
+
+Semnificația argumentelor este:
+  * **words** vectorul de cuvinte ce trebuie sortat
+  * **number_of_words** numărul de cuvinte
+  * **size** dimensiunea unui cuvânt
+
+Atenție, funcția *nu* returnează nimic, sortarea se face in-place!
 
 ## Precizări:
 - lungimea textului este mai mica decat 1000;
@@ -23,5 +48,3 @@ dupa apelul sort: words = ["27", "32", "de", "de", "si", "Ana", "are", "mere", "
 ## Hint:
 - pentru mai multe informatii despre qsort puteti accesa linkul: https://man7.org/linux/man-pages/man3/qsort.3.html
 
-## Punctare
-- Task-ul are 25 de puncte, dintre care un punct pentru coding-style si detalierea implementarii.
