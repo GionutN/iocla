@@ -4,7 +4,7 @@ all: run clean
 
 run: checker
 
-checker:
+check:
 	./check_all.sh
 
 clean:

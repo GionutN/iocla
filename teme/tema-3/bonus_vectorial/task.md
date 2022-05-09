@@ -1,7 +1,5 @@
 # Task Bonus - Instructiuni Vectoriale - SSE, AVX
 
-Biju intra intr-una din camerele din spatele lui Steve. Gaseste un plic pe care scrie "optimizeaza".
-
 ## Momentul de Teorie
 
 Sistemele de calcul pot fi de 4 tipuri, în functie de câte instrucţiuni se execută în acelaşi timp şi câte date se prelucrează în acelasi timp: SISD, SIMD, MISD, MIMD.
@@ -48,7 +46,7 @@ Mentionati in comentarii sau in README faptul ca ati folosit AVX, sa stim ca e n
 
 ## Punctare
 
-Acest task valoreaza 15 puncte, dintre care 3 se acorda pentru coding-style si descrierea implementarii.
+Acest task valoreaza 15 puncte.
 
 ## Resurse utile
 

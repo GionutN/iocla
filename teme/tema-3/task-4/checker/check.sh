@@ -10,7 +10,7 @@ TOTAL=0
 
 make copy > /dev/null 2>&1 && make > /dev/null 2>&1
 
-echo "============== cpuid bonus task ==============="
+echo "====================== Task 4 ======================="
 
 CPU=$(cat /proc/cpuinfo | grep "vendor_id" | uniq | cut -d':' -f2 | cut -d' ' -f2)
 if [[ $CPU == "GenuineIntel" ]]; then
@@ -23,21 +23,21 @@ fi
 
 VENDOR_ID_INTEL=$(cat $OUTPUT_INTEL | head -n 1 | cut -d':' -f 2)
 REF_VENDOR_ID_INTEL=" GenuineIntel"
-VENDOR_ID_INTEL=$(cat $OUTPUT_AMD | head -n 1 | cut -d':' -f 2)
+VENDOR_ID_AMD=$(cat $OUTPUT_AMD | head -n 1 | cut -d':' -f 2)
 REF_VENDOR_ID_INTEL=" AuthenticAMD"
 
 if [[ "$VENDOR_ID_INTEL" == "$REF_VENDOR_ID_INTEL" ]]; then
-    echo "Vendor ID Intel				  ${BIG_TASK_SCORE}p/${BIG_TASK_SCORE}p"
+    echo "Vendor ID Intel				  ${BIG_TASK_SCORE}.00p/${BIG_TASK_SCORE}.00p"
     TOTAL=$((TOTAL + BIG_TASK_SCORE))
 else
-    echo "Vendor ID Intel				  0p/${BIG_TASK_SCORE}p"
+    echo "Vendor ID Intel				  0.00p/${BIG_TASK_SCORE}.00p"
 fi
 
 if [[ "$VENDOR_ID_AMD" == "$REF_VENDOR_ID_AMD" ]]; then
-    echo "Vendor ID AMD				  ${BIG_TASK_SCORE}p/${BIG_TASK_SCORE}p"
+    echo "Vendor ID AMD				  ${BIG_TASK_SCORE}.00p/${BIG_TASK_SCORE}.00p"
     TOTAL=$((TOTAL + BIG_TASK_SCORE))
 else
-    echo "Vendor ID AMD				  0p/${BIG_TASK_SCORE}p"
+    echo "Vendor ID AMD				  0.00p/${BIG_TASK_SCORE}.00p"
 fi
 
 HAVE_MPX=0
@@ -90,31 +90,31 @@ else
 fi
 
 if [[ "$HAVE_APIC" == "$APIC" ]]; then
-    echo "APIC					  ${SMALL_TASK_SCORE}p/${SMALL_TASK_SCORE}p"
+    echo "APIC					  ${SMALL_TASK_SCORE}.00p/${SMALL_TASK_SCORE}.00p"
     TOTAL=$((TOTAL + SMALL_TASK_SCORE))
 else
-    echo "APIC					  0p/${SMALL_TASK_SCORE}p"
+    echo "APIC					  0.00p/${SMALL_TASK_SCORE}.00p"
 fi
 
 if [[ "$HAVE_RDRAND" == "$RDRAND" ]]; then
-    echo "RDRAND					  ${SMALL_TASK_SCORE}p/${SMALL_TASK_SCORE}p"
+    echo "RDRAND					  ${SMALL_TASK_SCORE}.00p/${SMALL_TASK_SCORE}.00p"
     TOTAL=$((TOTAL + SMALL_TASK_SCORE))
 else
-    echo "RDRAND					  0p/${SMALL_TASK_SCORE}p"
+    echo "RDRAND					  0.00p/${SMALL_TASK_SCORE}.00p"
 fi
 
 if [[ "$HAVE_MPX" == "$MPX" ]]; then
-    echo "MPX					  ${BIG_TASK_SCORE}p/${BIG_TASK_SCORE}p"
+    echo "MPX					  ${BIG_TASK_SCORE}.00p/${BIG_TASK_SCORE}.00p"
     TOTAL=$((TOTAL + BIG_TASK_SCORE))
 else
-    echo "MPX					  0p/${BIG_TASK_SCORE}p"
+    echo "MPX					  0.00p/${BIG_TASK_SCORE}.00p"
 fi
 
 if [[ "$HAVE_SVM" == "$SVM" ]]; then
-    echo "SVM					  3p/3p"
+    echo "SVM					  3.00p/3.00p"
     TOTAL=$((TOTAL + 3))
 else
-    echo "SVM					  0p/3p"
+    echo "SVM					  0.00p/3.00p"
 fi
 
 CACHE_LINE_REF=$(getconf -a | grep LEVEL2_CACHE_LINESIZE | cut -d' ' -f15)
@@ -129,20 +129,20 @@ CACHE_LINE=$(echo $CACHE | cut -d',' -f1 | cut -d' ' -f3)
 CACHE_SIZE=$(echo $CACHE | cut -d',' -f2 | cut -d' ' -f4)
 
 if [[ "$CACHE_LINE_REF" == "$CACHE_LINE" ]]; then
-    echo "Cache Line				  ${BIG_TASK_SCORE}p/${BIG_TASK_SCORE}p"
+    echo "Cache Line				  ${BIG_TASK_SCORE}.00p/${BIG_TASK_SCORE}.00p"
     TOTAL=$((TOTAL + BIG_TASK_SCORE))
 else
-    echo "Cache Line				  0p/${BIG_TASK_SCORE}p"
+    echo "Cache Line				  0.00p/${BIG_TASK_SCORE}.00p"
 fi
 
 if [[ "$CACHE_SIZE_REF" == "$CACHE_SIZE" ]]; then
-    echo "Cache Size				  ${BIG_TASK_SCORE}p/${BIG_TASK_SCORE}p"
+    echo "Cache Size				  ${BIG_TASK_SCORE}.00p/${BIG_TASK_SCORE}.00p"
     TOTAL=$((TOTAL + BIG_TASK_SCORE))
 else
-    echo "Cache Size				  0p/${BIG_TASK_SCORE}p"
+    echo "Cache Size				  0.00p/${BIG_TASK_SCORE}.00p"
 fi
 
 echo
-printf "Total score:				%02dp/%02dp\n" ${TOTAL} ${MAX_SCORE}
+printf "Total score:				%5.2fp/%5.2fp\n" ${TOTAL} ${MAX_SCORE} | tr ',' '.'
 
 echo "task-4:${TOTAL}" >> ../../.results

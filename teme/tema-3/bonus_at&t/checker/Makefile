@@ -1,11 +1,11 @@
 ASM=as
 ASMFLAGS=--32
 CC=gcc
-CFLAGS=-m32 -fno-pie
+CFLAGS=-m32 -fno-pie -no-pie
 MAKEFLAGS=--silent
 TASKNAME = bonus_at_t
-IMPL = ../../$(TASKNAME)/$(TASKNAME).asm
-SKEL = ../$(TASKNAME).asm
+IMPL = ../../$(TASKNAME)/$(TASKNAME).S
+SKEL = ../$(TASKNAME).S
 
 build: checker
 

@@ -1,7 +1,5 @@
 # Task Bonus - Assembly 64bit
 
-Biju intra intr-una din camerele din spatele lui Steve. Gaseste un plic pe care scrie "accepta diferitul".
-
 Task-ul implementarea unei functii care aduna 2 vectori de dimensiune `n`, apoi scade din vectorul rezultat 3 numere, definite prin `#define` (`*_VALUE`), in `positions.h`, de pe pozitiile indicate tot in `positions.h` (`*_POSITION`), in assembly pe 32 de biti, folosind sintaxa AT&T. Pozitiile trebuie scalate cu dimensiunea vectorului, ele fiind definite pentru un vector de dimensiune 10.
 
 Sintaxa AT&T este a 2-a sintaxa in care poate fi scris cod de asamblare pentru arhitectura x86. Aceasta sintaxa este singura inteleasa de asamblurul GNU, GAS si este singura folosita in nucleul Linux. Ca o conventie, fisierele care folosesc sintaxa AT&T au extensia `.S`, in timp ce fisierele cu sintaxa Intel folosesc extensia `.asm`. De asemenea, fisierele cu sintaxa AT&T pot folosi directivele de preprocesare ale GCC, precum `#define` si `#include`.
@@ -29,8 +27,9 @@ Diferentele intre AT&T si Intel sunt importante, mai ales la modul in care se fo
 
 ## Punctare
 
-Acest task valoreaza 10 puncte, dintre care un punct e pentru descrierea implementarii si coding style.
+Acest task valoreaza 10 puncte.
 
-## Hint
+## Atentie
 
-Va recomandam sa folositi functionalitatea `macro` a limbajului de asamblare pentru bucati de cod care se repeta.
+Folositi functionalitatea `macro` a limbajului de asamblare pentru a evita codul repetitiv.
+Duplicarea bucatilor de codu poate aduce depunctari pe partea de coding-style.

@@ -36,30 +36,22 @@ if [ ! -e tests/ref ]; then
     fail "tests/ref not found"
 fi
 
-echo "=================== Task 3 ===================="
+echo "====================== Task 3 ======================="
 
 total=0
-for i in 1 2 3 4 5 6; do
+for i in 1 2 3 4 5; do
     ./checker < "tests/in/${i}.in" | xargs > "tests/out/${i}.out"
     out=$(diff "tests/ref/${i}.ref" "tests/out/${i}.out" 2>&1)
 
     if [ -z "$out" ]; then
-        total=$(( total + 4 ))
-        echo "Test ${i}					  4p/4p"
+        total=$(( total + 5 ))
+        echo "Test ${i}					  5.00p/5.00p"
     else
-        echo "Test ${i}					  0p/4p"
+        echo "Test ${i}					  0.00p/5.00p"
     fi
 done
 
 echo
-if [[ "$total" == "0" ]]; then
-	echo "Coding Style				  0p/1p"
-else
-	echo "Coding Style				  1p/1p"
-	total=$((total + 1))
-fi
-
-echo
-printf "Total score:				%02dp/25p\n" ${total}
+printf "Total score:				%5.2fp/25.00p\n" ${total} | tr ',' '.'
 
 echo "task-3:${total}" >> ../../.results
