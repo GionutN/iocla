@@ -1,4 +1,4 @@
-# Task 1 - Noduri
+# Task 1 - Noduri (25p)
 
 Sursee dorește să găseasca drumul până în Rectorat ca să vadă si ea vestitul OZN. Ea știe prin ce clădiri trebuie să treacă dar lista a fost amestecată. Ajutați-o să ordoneze lista prin conectarea elementelor care inițial erau alăturate.
 
