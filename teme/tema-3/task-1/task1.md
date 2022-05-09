@@ -1,8 +1,8 @@
-# Task 1 - Sortarea albumelor
+# Task 1 - Noduri
 
-Intrand pe prima usa, Biju este intampinat de Allen Newell, unul din inventatorii listelor inlantuite. Acesta il provoaca pe Biju sa sorteze albumele unuia dintre rivalii lui, Bogdan de la Ploiesti. Albumele lui, fiind pretioase, sunt tinute in niste noduri ale unei liste simplu-inlantuite.
+Sursee dorește să găseasca drumul până în Rectorat ca să vadă si ea vestitul OZN. Ea știe prin ce clădiri trebuie să treacă dar lista a fost amestecată. Ajutați-o să ordoneze lista prin conectarea elementelor care inițial erau alăturate.
 
-Biju trebuie să implementeze funcția cu semnătura `struct node* sort(int n, struct node* node);` din fișierul task1.asm, care “leagă” nodurile din listă în ordine crescătoare. Funcția primește numărul de noduri și adresa vectorului și întoarce adresa primului nod din lista rezultată.
+Trebuie să implementați funcția cu semnătura `struct node* sort(int n, struct node* node);` din fișierul task1.asm, care “leagă” nodurile din listă în ordine crescătoare. Funcția primește numărul de noduri și adresa vectorului și întoarce adresa primului nod din lista rezultată.
 
 Structura unui nod este:
 ```
@@ -13,13 +13,17 @@ struct node {
 ```
 și, inițial, câmpul `next` este setat la `NULL`.
 
-## Precizări:
-- n >= 1
-- secvența conține numere consecutive distincte începand cu 1 (ex: 1 2 3 ...)
-- structura vectorulului NU trebuie modificată (interschimbarea nodurilor este interzisă)
-- sortarea trebuie facută in-place
-- este permisă folosirea unor structuri auxiliare, atâta timp cât, nodurile listei rezultate sunt cele din vectorul inițial
-- NU este permisă folosirea funcției `qsort` din libc
+Antetul funcției este:
+```
+struct node* sort(int n, struct node* node); 
+```
+
+Semnificația argumentelor este:
+
+* *n* numărul de noduri
+* *node* adresa vectorului ce trebuie sortat
+
+Funcția returneaza adresa primului nod din lista ordonată.
 
 ## Exemplu
 ```
@@ -40,8 +44,11 @@ Apelul funcției `sort` întoarce `0x3A` (adresa nodului cu valoarea 1) și vect
 | 0x42      | 3         | NULL      |
 ```
 
-## Hint:
-- pentru implementarea sortării vă puteți inspira din [Selection Sort](https://www.geeksforgeeks.org/selection-sort/)
 
-## Punctare
-- Task-ul are 25 de puncte, dintre care un punct pentru coding-style si detalierea implementarii.
+## Precizări:
+- n >= 1
+- secvența conține numere consecutive distincte începand cu 1 (ex: 1 2 3 ...)
+- structura vectorulului NU trebuie modificată (interschimbarea nodurilor este interzisă)
+- sortarea trebuie facută in-place
+- este permisă folosirea unor structuri auxiliare, atâta timp cât, nodurile listei rezultate sunt cele din vectorul inițial
+- NU este permisă folosirea funcției `qsort` din libc
