@@ -3,20 +3,19 @@ CFLAGS = -m32 -no-pie
 ASM = nasm
 ASMFLAGS = -f elf
 TASKNAME = task4
+LDFLAGS = -m32 -no-pie
 
 build: checker
 
 check: 
 	./check.sh
 
-checker: checker.o task4.o
-	$(CC) $(CFLAGS) $^ -o $@
+checker: checker.o $(TASKNAME).o
  
-task4.o: ../task4.asm
-	$(ASM) $(ASMFLAGS) $^
+$(TASKNAME).o: ../$(TASKNAME).asm
+	$(ASM) $(ASMFLAGS) $^ -o $@
 
 checker.o: checker.c
-	$(CC) -c $(CFLAGS) $^
 
 clean:
-	rm checker *.o *.out
+	rm checker *.o

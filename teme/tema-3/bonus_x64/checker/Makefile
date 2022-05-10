@@ -1,13 +1,11 @@
 ASM = nasm
 ASMFLAGS = -f elf64
-TASKNAME = bonus_vectorial
-CFLAGS = -no-pie
-LDFLAGS = -no-pie
 MAKEFLAGS = --silent
+TASKNAME = bonus_x64
 
 build: checker
 
-check: 
+check:
 	./check.sh
 
 checker: checker.o $(TASKNAME).o
