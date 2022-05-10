@@ -9,7 +9,7 @@ checker: checker.o task1.o
 
 checker.o: checker.c
 
-task1.o: task1.asm
+task1.o: ../task1.asm
 	$(ASM) $(ASMFLAGS) $< -o $@
 
 check:

@@ -12,7 +12,7 @@ TASK_SCORE=5
 MAX_SCORE=15
 TOTAL=0
 
-make copy > /dev/null 2>&1 && make > /dev/null 2>&1
+make checker > /dev/null
 
 echo "============ SIMD instructions bonus task ==========="
 

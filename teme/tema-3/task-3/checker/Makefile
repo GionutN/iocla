@@ -8,7 +8,7 @@ MAKEFLAGS=--silent
 checker: checker.o task3.o
 	$(CC) $(CFLAGS) -o checker $^
 
-task3.o: task3.asm
+task3.o: ../task3.asm
 	$(ASM) $(ASMFLAGS) $< -o $@
 
 checker.o: checker.c

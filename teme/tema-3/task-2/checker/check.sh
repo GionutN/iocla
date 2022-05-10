@@ -12,7 +12,7 @@ TASK_SCORE=$(echo "scale=2; 25 / 10" | bc)
 MAX_SCORE=25
 TOTAL=0
 
-make copy > /dev/null 2>&1 && make > /dev/null 2>&1
+make checker > /dev/null
 
 echo "====================== Task 2 ======================="
 

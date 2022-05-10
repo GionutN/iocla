@@ -6,19 +6,12 @@ fail() {
 }
 
 shopt -s extglob
-rm -f !("tests"|"check.sh"|"Makefile"|"checker.c")
-if [ -f ../../task1.asm ]; then
-	cp -r ../../task1/task1.asm .
-else
-	cp -r ../task1.asm .
-fi
-sleep 1     # to avoid "make: warning:  Clock skew detected."
 
 if [ ! -f Makefile ]; then
     fail "Makefile not found"
 fi
 
-make 1>/dev/null || exit 1
+make 1> /dev/null || exit 1
 
 if [ ! -f checker ]; then
     fail "checker not found"

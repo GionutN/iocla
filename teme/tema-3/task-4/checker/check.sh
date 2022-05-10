@@ -8,7 +8,7 @@ BIG_TASK_SCORE=2
 MAX_SCORE=15
 TOTAL=0
 
-make copy > /dev/null 2>&1 && make > /dev/null 2>&1
+make checker > /dev/null
 
 echo "====================== Task 4 ======================="
 

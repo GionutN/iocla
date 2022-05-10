@@ -12,7 +12,7 @@ TASK_SCORE=$(echo "scale=2; 10 / 3" | bc)
 MAX_SCORE=10
 TOTAL=0
 
-make copy > /dev/null 2>&1 && make > /dev/null 2>&1
+make checker > /dev/null
 
 echo "================== AT&T bonus task =================="
 

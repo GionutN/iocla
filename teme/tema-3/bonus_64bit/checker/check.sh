@@ -12,7 +12,7 @@ TASK_SCORE=$(echo "scale=2; 5 / 3" | bc)
 MAX_SCORE=5
 TOTAL=0
 
-make copy > /dev/null 2>&1 && make > /dev/null 2>&1
+make checker > /dev/null
 
 echo "================ 64 bits bonus task ================="
 
