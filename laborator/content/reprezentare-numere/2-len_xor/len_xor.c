@@ -12,21 +12,33 @@ int my_strlen(const char *str)
 	 *
 	 * Remove this cast when implementing the function.
 	 */
-	(void) str;
-
-	return -1;
+	char* p = str;
+	while (*p)
+		p++;
+	return p - str;
 }
 
 void equality_check(const char *str)
 {
 	/* TODO */
-	(void) str;
+	int len = my_strlen(str);
+	for (int i = 0; i < len; i++) {
+		int idx = (i + (1 << i)) % len;
+		char a = *(str + i);
+		char b = *(str + idx);
+		if (a ^ b);
+		else {
+			printf("Address of %c: %p\n", a, str + i);
+		}
+	}
 }
 
 int main(void)
 {
 	/* TODO: Test functions */
-
+	char text[11] = "aac";
+	printf("%d \n", my_strlen(text));
+	equality_check(text);
 	return 0;
 }
 
