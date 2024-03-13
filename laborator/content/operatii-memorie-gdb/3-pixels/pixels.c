@@ -15,7 +15,7 @@
  * linia n - 1, etc.
  */
 
-void reversePic(Picture *pic);
+//void reversePic(Picture *pic);
 
 /*
  * TODO b
@@ -27,7 +27,7 @@ void reversePic(Picture *pic);
  * p.b = 0.11 * p.b;
  */
 
-void colorToGray(Picture *pic);
+//void colorToGray(Picture *pic);
 
 /*
  * Structura unui pixel, cea a unei imagini, precum si generarea acestora
@@ -47,6 +47,12 @@ int main(void)
 	Pixel **pix_array = generatePixelArray(height, width);
 	Picture *pic = generatePicture(height, width, pix_array);
 
+	printPicture(pic);
+	printf("\n");
+	reversePic(pic);
+	printPicture(pic);
+	printf("\n");
+	colorToGray(pic);
 	printPicture(pic);
 
 	freePicture(&pic);

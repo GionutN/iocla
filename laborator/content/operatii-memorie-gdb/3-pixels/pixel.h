@@ -118,4 +118,36 @@ void freePicture(Picture **pic)
 	free(*pic);
 }
 
+void swapPixel(Pixel* p1, Pixel* p2)
+{
+	Pixel tmp = *p1;
+	*p1 = *p2;
+	*p2 = tmp;
+}
+
+void reversePic(Picture *pic)
+{
+	for (int i = 0; i <= pic->height / 2; i++)
+	{
+		Pixel** p1 = &pic->pix_array[i];
+		Pixel** p2 = &pic->pix_array[pic->height - i - 1];
+		Pixel* tmp = *p1;
+		*p1 = *p2;
+		*p2 = tmp;
+	}
+}
+
+void colorToGray(Picture *pic)
+{
+	for (int i = 0; i < pic->height; i++)
+	{
+		for (int j = 0; j < pic->width; j++)
+		{
+			pic->pix_array[i][j].R = (double)pic->pix_array[i][j].R * 0.3;
+			pic->pix_array[i][j].G = (double)pic->pix_array[i][j].G * 0.59;
+			pic->pix_array[i][j].B = (double)pic->pix_array[i][j].B * 0.11;
+		}
+	}
+}
+
 #endif // __PIXEL_H__
