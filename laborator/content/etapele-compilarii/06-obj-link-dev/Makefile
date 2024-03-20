@@ -7,9 +7,11 @@ all: main
 
 
 # TODO: Add dependecies here so that the Makefile works
-main: main.c
-	$(CC) $(CFLAGS) -o $@ $^
+main: main.c libops.a
+	$(CC) $(CFLAGS) -o $@ $^ -L. -lops
 
+libops.a: shop.o
+	ar rc $@ $^
 
 clean:
-	-rm -f main main.o
+	-rm -f main main.o libops.a
