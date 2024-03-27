@@ -8,9 +8,25 @@ int main(void)
 	int dest = v[2]; /* 15 */
 	int start = 0;
 	int end = sizeof(v) / sizeof(int) - 1;
+	int pos = -1;
 
 	/* TODO: Implement binary search */
-	(void) dest;
-	(void) start;
-	(void) end;
+bsearch:
+
+	int mid = (start + end) / 2;
+	if (v[mid] == dest) {
+		pos = mid;
+		goto done;
+	}
+	if (dest < v[mid]) {
+		end = mid - 1;
+	}
+	if (dest > v[mid]) {
+		start = mid + 1;
+	}
+	goto bsearch;
+
+done:
+	printf("Position: %d\n", pos);
+	return 0;
 }

@@ -1,0 +1,3 @@
+Inside main a call to init_shopping is made, but it is a global variable and not a function. 
+Also, shopping_list is used as a variable, but it is a function. 
+The names init_shopping and shopping_list must be interchanged.
