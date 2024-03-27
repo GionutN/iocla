@@ -1,0 +1,2 @@
+	Observed the generated code for multiple compilers and options. It is different every time.
+	The usage of -O2 in the example shows that the compiler knows the function will always return 2.

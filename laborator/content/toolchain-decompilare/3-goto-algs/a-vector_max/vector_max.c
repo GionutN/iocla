@@ -11,7 +11,15 @@ int main(void)
 	/* TODO: Implement finding the maximum value in the vector */
 	max = v[0];
 	i = 1;
+loop:
 
-	(void) i;
-	(void) max;
+	if (max < v[i]) {
+		max = v[i];
+	}
+	i++;
+	if (i < 8)
+		goto loop;
+
+	printf("max = %d\n", max);
+	return 0;
 }
