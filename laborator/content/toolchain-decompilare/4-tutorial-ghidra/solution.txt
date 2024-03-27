@@ -1,0 +1,2 @@
+	Through Ghidra decompilation
+The executable expects a password, 8 chars long, the fourth one being 'E'
