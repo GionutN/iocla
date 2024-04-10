@@ -49,5 +49,17 @@ add_dword_array_element:
 
     PRINTF32 `Array DWord sum is %u\n\x0`, eax
 
+    mov ecx, ARRAY_SIZE
+    xor ebx, ebx
+
+add_byte_sq_array_element:
+    xor eax, eax
+    mov al, [byte_array + ecx - 1]
+    mul byte [byte_array + ecx - 1]
+    add ebx, eax
+    loop add_byte_sq_array_element
+
+    PRINTF32 `Array byte sq sum is %u\n\x0`, ebx
+
     leave
     ret
