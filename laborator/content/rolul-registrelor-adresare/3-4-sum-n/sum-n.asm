@@ -20,5 +20,17 @@ add_to_sum:
     mov ecx, [num]
     PRINTF32 `Sum(%u): %u\n\x0`, ecx, eax
 
+    mov ecx, [num]
+    xor ebx, ebx
+
+add_to_sq_sum:
+    mov eax, ecx
+    mul ecx
+    add ebx, eax
+    loop add_to_sq_sum
+
+    mov ecx, [num]
+    PRINTF32 `SumSq(%u): %u\n\x0`, ecx, ebx
+
     leave
     ret
