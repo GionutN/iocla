@@ -12,5 +12,20 @@ main:
 
     ; TODO - print the powers of 2 that generate number stored in EAX
 
+powers:
+    mov edx, eax
+    and edx, ebx
+    jnz afis
+
+continuation:
+    shl ebx, 1
+    jz stop
+    jmp powers
+
+afis:
+    PRINTF32 `%d\n\x0`, ebx
+    jmp continuation
+
+stop:
     leave
     ret
