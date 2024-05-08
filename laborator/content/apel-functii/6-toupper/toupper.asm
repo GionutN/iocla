@@ -13,6 +13,25 @@ toupper:
     mov ebp, esp
 
     ; TODO
+    mov eax, dword [ebp + 8]
+    jmp string_loop_cond
+
+string_loop_body:
+    movzx edx, byte [eax]
+    cmp dl, 'a'
+    jl string_loop_step
+    cmp dl, 'z'
+    jg string_loop_step
+    sub dl, 20h
+    mov byte [eax], dl
+
+string_loop_step:
+    inc eax
+
+string_loop_cond:
+    movzx ebx, byte [eax]
+    test bl, bl
+    jnz string_loop_body
 
     leave
     ret
