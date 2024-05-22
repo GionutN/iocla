@@ -1,0 +1,5 @@
+insert buffer string: buffer is: 62(b) 6F(o) 6E(n) 67(g) 0A(
+)
+var is 0xCAFEBABE
+insert buffer string: buffer is: 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 41(A) 46(F) 4C(L) 4F(O) 57(W)
+var is 0x574F4C46
