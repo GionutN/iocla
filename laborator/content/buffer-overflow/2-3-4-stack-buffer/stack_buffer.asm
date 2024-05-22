@@ -47,6 +47,8 @@ fill_byte:
     cmp ecx, 64
     jl fill_byte
 
+    mov dword [ebx + 64], 0xdeadbeef
+
     ; Print data in buffer.
     push buffer_intro_message
     call printf
