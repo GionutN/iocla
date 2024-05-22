@@ -67,7 +67,7 @@ print_byte:
 
     pop ecx	; restore ecx
     inc ecx
-    cmp ecx, 64
+    cmp ecx, 76
     jl print_byte
 
     ; Print new line. C equivalent instruction is puts("").
